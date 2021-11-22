@@ -1,21 +1,24 @@
 <template>
-    <div>
+    <div class="rating-box">
         <span v-for="n in fullStars" :key="n.key">
-            <img src="https://img.icons8.com/ios-filled/14/000000/filled-star.png"/>
+            <img src="/assets/filled-star.png"/>
         </span>
         <template v-if="halfStar">
             <span>
-                <img src="https://img.icons8.com/ios-filled/14/000000/star-half-empty.png"/>
+                <img src="/assets/star-half-empty.png"/>
             </span>
         </template>
         <span v-for="i in emptyStars" :key="i.key">
-            <img src="https://img.icons8.com/ios/14/000000/star--v1.png"/>
+            <img src="/assets/star--v1.png"/>
         </span>
-        <span>
+        <span class="rating">
             {{current}}
         </span>
-        <span>
+        <span class="reviews-count">
             {{countReviews}} Reviews
+        </span>
+        <span class="buyers-count">
+            {{buyers}} Buyers
         </span>
     </div>
 </template>
@@ -41,7 +44,8 @@ export default {
     name: "StarRating",
     props: {
         current: null,
-        countReviews: null
+        countReviews: null,
+        buyers: null
     },
     data() {
         return {
@@ -54,5 +58,35 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+
+.rating-box{
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 12px;
+    line-height: 16px;
+    text-align: left;
+    margin-top: 12px;
+    margin-bottom: 12px;
+
+}
+
+.rating-box span{
+    margin-right: 4px;
+}
+
+.rating{
+    color: #FF6600;
+}
+
+.reviews-count{
+    color: #999999;
+}
+
+.buyers-count{
+    color: #333333;
+    margin-left: 24px;
+}
+
+
 
 </style>

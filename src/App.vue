@@ -16,12 +16,20 @@ export default {
 </script>
 
 <style lang="scss">
+
 #app {
-  font-family: Roboto, Helvetica, Arial, sans-serif;
+  font-family: Roboto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+}
+
+  @font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  font-display: auto;
+  unicode-range: U+000-5FF;
+  src: local("Roboto"), url("/fonts/Roboto/Roboto-Regular.ttf") format("ttf");
 }
 </style>
